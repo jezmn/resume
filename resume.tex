@@ -1,0 +1,322 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{tgpagella}
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{%
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath}
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% soul not needed (no \\ul anymore)
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\usepackage[margin=0.7in]{geometry}
+\pagestyle{empty}
+\setlength{\parskip}{3pt}
+\makeatletter
+\def\@listi{\leftmargin=1.5em \topsep=2pt \parsep=0pt \itemsep=1pt}
+\makeatother
+\newcommand{\sect}[1]{\vspace{4pt}\noindent\textbf{#1}\par\vspace{-2pt}\noindent\rule{\linewidth}{0.4pt}\par\vspace{2pt}}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Jesús Abdiel Moreno}}\\
+\vspace*{10pt}
+
+Veraguas, Panama • linkedin.com/in/jezmn • github.com/jezmn
+\end{center}
+\vspace*{10pt}
+
+\sect{Professional Summary}
+\vspace*{10pt}
+Backend \& DevOps Engineer driven by a deep curiosity for how systems work at every level. I focus
+on infrastructure automation, containerization and production deployments, with a preference for
+minimalist and maintainable solutions. I actively contribute to open source and constantly look for
+better ways of doing things.
+\vspace*{15pt}
+
+\sect{Experience}
+\vspace*{10pt}
+
+\textbf{Freelance Project (Logistics Company)} \hfill Panama
+
+DevOps \& Backend Developer \hfill September 2025 -- Present
+\vspace*{10pt}
+
+\begin{itemize}
+\item
+  Deployed the main application with Kamal and kamal-proxy, using GHCR as image registry for
+  zero-downtime releases.
+\item
+  Set up a self-hosted GitHub Actions runner on the VPS, configuring user permissions, SSH access
+  and registry credentials so Kamal can build, push and deploy containers from the pipeline.
+\item
+  Configured and maintained the CRM deployment on a VPS using Docker Compose and Traefik as
+  reverse proxy.
+\item
+  Implemented Cloudflare Tunnel to expose services without opening ports, and managed DNS and
+  redirect rules.
+\end{itemize}
+\vspace*{10pt}
+
+\textbf{Freelance Project (Beauty Salon)} \hfill Panama
+
+DevOps Engineer \hfill January 2026 -- March 2026
+\vspace*{10pt}
+
+\begin{itemize}
+\item
+  Managed DNS, SSL/TLS and security with Cloudflare, exposing services through Cloudflare Tunnel
+  and Traefik with no public ports.
+\item
+  Provisioned and hardened a Hetzner Cloud server (firewall rules, SSH key authentication) and
+  deployed a self-hosted Supabase instance behind Nginx.
+\item
+  Built CI/CD pipelines with GitHub Actions and self-hosted runners, deploying with Docker Swarm
+  for zero-downtime releases.
+\item
+  Integrated the TiloPay payment gateway and automated transactional emails with Brevo SMTP.
+\end{itemize}
+\vspace*{10pt}
+
+
+\textbf{Congreso Internacional de Ciencia, Innovación y Tecnología (COICIT)} \hfill Panama\\
+Full-stack Developer \hfill September 2025 -- October 2025
+\vspace*{10pt}
+
+\begin{itemize}
+\item
+  Developed and maintained a registration system using React, Node.js,
+  Express, and MongoDB.
+\item
+  Improved application security through data validation and
+  vulnerability fixes.
+\item
+  Deployed the system and configured the production environment using
+  Cloudflare.
+\end{itemize}
+
+\newpage
+\sect{Technical Projects}
+\vspace*{10pt}
+\textbf{Ansible Hardened Docker Host} \hfill \textbf{github.com/jezmn/ansible-hardened-docker-host}
+
+\begin{itemize}
+\item
+  Published an Ansible Galaxy collection to provision and harden Docker
+  hosts.
+\item
+  Includes SSH hardening, UFW, Fail2Ban, kernel sysctls, unattended
+  upgrades, and Docker CE.
+\item
+  Tested with Molecule and ansible-lint in CI, including SSH rollback.
+\end{itemize}
+\vspace*{10pt}
+
+\textbf{Agent-sandbox} -- Filesystem Isolation for AI Coding Agents \hfill \textbf{github.com/jezmn/agent-sandbox}
+
+\begin{itemize}
+\item
+  Built a Linux launcher using Bubblewrap to limit AI coding agents'
+  filesystem access.
+\item
+  Added read-only and read-write mounts and masking for sensitive files.
+\item
+  Tested mounts and command execution; added dry-run inspection.
+\end{itemize}
+\vspace*{10pt}
+
+\textbf{OR Solver} -- Operations Research Web Solver \hfill \textbf{github.com/jezmn/or-solver}
+
+\begin{itemize}
+\item
+  Web-based Operations Research solver with interactive step-by-step
+  solutions.
+\item
+  Implements methods for Linear Programming, Integer Programming,
+  Transportation, Assignment, Goal Programming and Sensitivity Analysis.
+\item
+  Built with FastAPI, Alpine.js, Tailwind CSS and interactive charts.
+\end{itemize}
+\vspace*{10pt}
+
+\textbf{Hanesu} -- Experimental workflow layer for AI coding agents \hfill \textbf{github.com/jezmn/hanesu}
+
+\begin{itemize}
+\item
+  Based on structured development processes, aimed at improving
+  consistency in AI-assisted coding tasks.
+\item
+  CLI tool published on npm that sets up task tracking, phases,
+  artifacts and quality gates.
+\item
+  Helps AI agents work more predictably on complex or multi-step tasks.
+\end{itemize}
+\vspace*{15pt}
+
+\sect{Education}
+\vspace*{10pt}
+
+\textbf{Technological University of Panama (UTP)}
+
+\begin{itemize}
+\item
+  Bachelor\textquotesingle s Degree in Software Development
+\end{itemize}
+\vspace*{15pt}
+
+\sect{Technical Skills}
+\vspace*{10pt}
+
+\begin{itemize}
+\item
+  \textbf{Languages:} TypeScript, JavaScript, Python, SQL, Bash
+\item
+  \textbf{Backend Frameworks:} NestJS, Express.js, FastAPI
+\item
+  \textbf{Frontend Frameworks:} Vue.js, Next.js, Astro, Alpine.js
+\item
+  \textbf{Infrastructure:} Linux, Hetzner Cloud, Nginx, Traefik,
+  Cloudflare
+\item
+  \textbf{DevOps:} Docker, Kamal, Ansible, OpenTofu, Git, CI/CD (GitHub Actions,
+  self-hosted runners)
+\item
+  \textbf{Cloud:} Amazon Web Services, Microsoft Azure
+\item
+  \textbf{Observability:} Dynatrace
+\item
+  \textbf{Databases:} PostgreSQL, MariaDB, MongoDB, SQLite
+\item
+  \textbf{ORMs:} Drizzle, Prisma
+\item
+  \textbf{Security:} Server Hardening, SSH, Firewalls
+\end{itemize}
+
+\newpage
+\sect{Development Environment}
+\vspace*{10pt}
+
+\begin{itemize}
+\item
+  Arch Linux · Hyprland · kitty · Zed · KeePassXC · OpenCode
+\end{itemize}
+\vspace*{15pt}
+
+\sect{Soft Skills}
+\vspace*{10pt}
+
+\begin{itemize}
+\item
+  Self-learning and adaptability
+\item
+  Open source contribution and community collaboration
+\item
+  Problem-solving and analytical thinking
+\item
+  Clear communication
+\item
+  Responsibility and ownership
+\end{itemize}
+\vspace*{15pt}
+
+\sect{Languages}
+
+\begin{itemize}
+\item
+  Spanish (Native)
+\item
+  English (A2-B1)
+\end{itemize}
+\vspace*{15pt}
+
+\sect{Achievements}
+\vspace*{10pt}
+
+\textbf{First Place -- IHCAVA (Agroindustrial Innovation Ideathon \&
+Hackathon) -- 2026}
+
+\begin{itemize}
+\item
+  Member of the winning team, developing a technological solution for an
+  agroindustrial innovation challenge.
+\end{itemize}
+
+\textbf{Third Place -- BDO Tech-Qure Challenge (CTF, powered by
+Hackrocks \& ITCqur Cyber Solutions) -- 2026}
+
+\begin{itemize}
+\item
+  An international cybersecurity Capture the Flag competition.
+\end{itemize}
+\vspace*{15pt}
+
+\sect{Certifications}
+\vspace*{10pt}
+
+\textbf{Participation Certificate, 7th Copa Airlines Hackathon} -- Copa Airlines \hfill Oct 2026
+
+\begin{itemize}
+\item
+  DevOps, API \& Observability
+\end{itemize}
+\vspace*{10pt}
+
+\textbf{Fundamentos de AWS: Cloud, Serverless y Operación} -- Commit Academy \hfill Sep 2026
+
+\begin{itemize}
+\item
+  Credential ID: cert\_fRnCsTzJE9
+\item
+  \url{https://www.commitacademy.io/app/verify-certificate/cert_fRnCsTzJE9}
+\end{itemize}
+\vspace*{15pt}
+
+\sect{Community Involvement}
+\vspace*{10pt}
+
+\begin{itemize}
+\item
+  Volunteer instructor in educational robotics with Arduino for students
+  at La Primavera School.
+\item
+  Speaker at a university clinic on personal information security,
+  covering password management best practices and digital privacy.
+\item
+  Participant in the VI edition of HACK4EDU with the topic ``Local AI
+  for Language Learning.''
+\end{itemize}
+
+\end{document}
