@@ -6,6 +6,7 @@
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage[T1]{fontenc}
 \usepackage{tgpagella}
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -61,48 +62,75 @@ Veraguas, Panama • linkedin.com/in/jezmn • github.com/jezmn
 
 \sect{Professional Summary}
 \vspace*{10pt}
-Backend \& DevOps Engineer driven by a deep curiosity for how systems work at every level. I focus
-on infrastructure automation, containerization and production deployments, with a preference for
-minimalist and maintainable solutions. I actively contribute to open source and constantly look for
-better ways of doing things.
+DevOps \& Software Engineer focused on Linux, networking and security, where I build APIs and
+maintainable infrastructure, harden servers, and automate deployments with Docker and CI/CD. I like
+minimalist solutions and publish my tools as open source.
 \vspace*{15pt}
 
 \sect{Experience}
 \vspace*{10pt}
 
-\textbf{Freelance Project (Logistics Company)} \hfill Panama
+\textbf{Restaurant Operations Platform} \hfill Panama
 
-DevOps \& Backend Developer \hfill September 2025 -- Present
+DevOps \& Software Engineer \hfill July 2026 -- Present
 \vspace*{10pt}
 
 \begin{itemize}
 \item
-  Deployed the main application with Kamal and kamal-proxy, using GHCR as image registry for
-  zero-downtime releases.
+  Built a multi-tenant SaaS for restaurant operations and took it to a live
+  pilot with a restaurant.
 \item
-  Set up a self-hosted GitHub Actions runner on the VPS, configuring user permissions, SSH access
-  and registry credentials so Kamal can build, push and deploy containers from the pipeline.
+  Built the NestJS/TypeScript API with Drizzle and PostgreSQL: tenant isolation,
+  RBAC, MFA for platform admins, audit logging, and cookie-based JWT auth with
+  refresh rotation and session invalidation.
 \item
-  Configured and maintained the CRM deployment on a VPS using Docker Compose and Traefik as
+  Shipped the Next.js panel on Cloudflare Workers for table service, cash and
+  admin workflows, with conditional ETags, stale-write protection,
+  magic-byte-validated and tenant-scoped file storage on Cloudflare R2.
+\item
+  Deployed the API with Kamal from a self-hosted runner: Cloudflare Tunnel and
+  PostgreSQL as accessories, WAF rules in front of the API, and separate GitHub
+  environments for staging/production secrets; CI runs lint, build and
+  cross-tenant isolation tests.
+\item
+  Hardened the production server with my published Ansible collection:
+  SSH, UFW, Fail2Ban, kernel sysctls, Docker, etc.
+\end{itemize}
+\vspace*{10pt}
+
+\textbf{Freelance Project (Logistics Company)} \hfill Panama
+
+DevOps Engineer \hfill September 2025 -- Present
+\vspace*{10pt}
+
+\begin{itemize}
+\item
+  Chose Kamal for zero-downtime deploys and built-in rollback on a single VPS,
+  using kamal-proxy and GHCR.
+\item
+  Kept CI on GitHub-hosted runners but ran deploys on a self-hosted runner with a
+  dedicated user.
+\item
+  Configured and maintained the CRM deployment with Docker Compose and Traefik as
   reverse proxy.
 \item
-  Implemented Cloudflare Tunnel to expose services without opening ports, and managed DNS and
-  redirect rules.
+  Implemented Cloudflare Tunnel to expose services without opening ports;
+  managed DNS and redirect rules.
 \end{itemize}
 \vspace*{10pt}
 
 \textbf{Freelance Project (Beauty Salon)} \hfill Panama
 
-DevOps Engineer \hfill January 2026 -- March 2026
+DevOps \& Software Engineer \hfill January 2026 -- March 2026
 \vspace*{10pt}
 
 \begin{itemize}
 \item
-  Managed DNS, SSL/TLS and security with Cloudflare, exposing services through Cloudflare Tunnel
-  and Traefik with no public ports.
+  Managed DNS, TLS and access for a self-hosted Supabase stack using
+  Cloudflare Tunnel and Nginx.
 \item
-  Provisioned and hardened a Hetzner Cloud server (firewall rules, SSH key authentication) and
-  deployed a self-hosted Supabase instance behind Nginx.
+  Provisioned and hardened a Hetzner Cloud server (firewall rules, SSH key
+  authentication) hosting the self-hosted stack.
 \item
   Built CI/CD pipelines with GitHub Actions and self-hosted runners, deploying with Docker Swarm
   for zero-downtime releases.
@@ -110,23 +138,6 @@ DevOps Engineer \hfill January 2026 -- March 2026
   Integrated the TiloPay payment gateway and automated transactional emails with Brevo SMTP.
 \end{itemize}
 \vspace*{10pt}
-
-
-\textbf{Congreso Internacional de Ciencia, Innovación y Tecnología (COICIT)} \hfill Panama\\
-Full-stack Developer \hfill September 2025 -- October 2025
-\vspace*{10pt}
-
-\begin{itemize}
-\item
-  Developed and maintained a registration system using React, Node.js,
-  Express, and MongoDB.
-\item
-  Improved application security through data validation and
-  vulnerability fixes.
-\item
-  Deployed the system and configured the production environment using
-  Cloudflare.
-\end{itemize}
 
 \newpage
 \sect{Technical Projects}
@@ -162,27 +173,27 @@ Full-stack Developer \hfill September 2025 -- October 2025
 
 \begin{itemize}
 \item
-  Web-based Operations Research solver with interactive step-by-step
-  solutions.
+    Web-based Operations Research solver with interactive step-by-step solutions
+    for Linear Programming, Integer Programming, Transportation, Assignment,
+    Goal Programming and Sensitivity Analysis.
 \item
-  Implements methods for Linear Programming, Integer Programming,
-  Transportation, Assignment, Goal Programming and Sensitivity Analysis.
-\item
-  Built with FastAPI, Alpine.js, Tailwind CSS and interactive charts.
+    Built with FastAPI, Alpine.js, Tailwind CSS and interactive charts; deployed
+    from a rootless Docker daemon under an unprivileged runner setup.
 \end{itemize}
 \vspace*{10pt}
 
-\textbf{Hanesu} -- Experimental workflow layer for AI coding agents \hfill \textbf{github.com/jezmn/hanesu}
+
+\textbf{Quanty} -- Interactive Probability \& Statistics App \hfill \textbf{github.com/jezmn/quanty}
 
 \begin{itemize}
 \item
-  Based on structured development processes, aimed at improving
-  consistency in AI-assisted coding tasks.
+    Built a web app with 8 interactive rounds on probability and statistics:
+    exact formulas and server-side Monte Carlo simulations (NumPy/FastAPI),
+    verified with pytest against hand-computed results.
 \item
-  CLI tool published on npm that sets up task tracking, phases,
-  artifacts and quality gates.
-\item
-  Helps AI agents work more predictably on complex or multi-step tasks.
+    Deployed via CI/CD on a dedicated runner with a rootless Docker daemon,
+    pinned dependencies and image digests (supply-chain hardening), and per-IP
+    rate limiting on the API.
 \end{itemize}
 \vspace*{15pt}
 
@@ -193,7 +204,7 @@ Full-stack Developer \hfill September 2025 -- October 2025
 
 \begin{itemize}
 \item
-  Bachelor\textquotesingle s Degree in Software Development
+  Bachelor\textquotesingle s Degree in Software Development | 2022 -- Expected March 2027
 \end{itemize}
 \vspace*{15pt}
 
@@ -202,49 +213,30 @@ Full-stack Developer \hfill September 2025 -- October 2025
 
 \begin{itemize}
 \item
+  \textbf{Cloud \& Networking:} Hetzner Cloud, AWS, Cloudflare, Nginx, Traefik, Linux
+\item
+  \textbf{DevOps:} Docker, Kamal, Ansible, OpenTofu, GitHub Actions, CI/CD, Git
+\item
+  \textbf{Security:} Server Hardening, SSH, Firewalls, WAF, Secrets Management
+\item
   \textbf{Languages:} TypeScript, JavaScript, Python, SQL, Bash
 \item
   \textbf{Backend Frameworks:} NestJS, Express.js, FastAPI
-\item
-  \textbf{Frontend Frameworks:} Vue.js, Astro, Alpine.js
-\item
-  \textbf{Infrastructure:} Linux, Hetzner Cloud, AWS, Nginx, Traefik,
-  Cloudflare
-\item
-  \textbf{DevOps:} Docker, Kamal, Ansible, OpenTofu, Git, CI/CD (GitHub
-  Actions)
 \item
   \textbf{Databases:} PostgreSQL, MariaDB, MongoDB, SQLite
 \item
   \textbf{ORMs:} Drizzle, Prisma
 \item
-  \textbf{Security:} Server Hardening, SSH, Firewalls
+  \textbf{Frontend Frameworks:} Vue.js, Astro, Alpine.js, Next.js
 \end{itemize}
 
 \newpage
-\sect{Development Environment}
-\vspace*{10pt}
-
-\begin{itemize}
-\item
-  Arch Linux · Hyprland · kitty · Zed · KeePassXC · OpenCode
-\end{itemize}
-\vspace*{15pt}
-
 \sect{Soft Skills}
 \vspace*{10pt}
 
 \begin{itemize}
 \item
-  Self-learning and adaptability
-\item
-  Open source contribution and community collaboration
-\item
-  Problem-solving and analytical thinking
-\item
-  Clear communication
-\item
-  Responsibility and ownership
+  Technical documentation, teaching and knowledge sharing
 \end{itemize}
 \vspace*{15pt}
 
@@ -252,9 +244,7 @@ Full-stack Developer \hfill September 2025 -- October 2025
 
 \begin{itemize}
 \item
-  Spanish (Native)
-\item
-  English (A2-B1)
+  Spanish (Native), English (A2-B1)
 \end{itemize}
 \vspace*{15pt}
 
@@ -319,6 +309,9 @@ Hackrocks \& ITCqur Cyber Solutions) -- 2026}
 \item
   Speaker at a university clinic on personal information security,
   covering password management best practices and digital privacy.
+\item
+  Developed the registration system for COICIT, an international science and
+  technology congress in my university.
 \end{itemize}
 
 \end{document}
